@@ -1,0 +1,4 @@
+org\forgerock\openam\vericlouds\VeriCloudsIT.class
+org\forgerock\openam\vericlouds\Callback.class
+org\forgerock\openam\vericlouds\NameValuePair.class
+org\forgerock\openam\vericlouds\SampleAuthCallback.class

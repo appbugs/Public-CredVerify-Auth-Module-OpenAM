@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * The contents of this file are subject to the terms of the Common Development and
+ * Distribution License (the License). You may not use this file except in compliance with the
+ * License.
+ *
+ * You can obtain a copy of the License at legal/CDDLv1.0.txt. See the License for the
+ * specific language governing permission and limitations under the License.
+ *
+ * When distributing Covered Software, include this CDDL Header Notice in each file and include
+ * the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ * Header, with the fields enclosed by brackets [] replaced by your own identifying
+ * information: "Portions copyright [year] [name of copyright owner]".
+ *
+ * Copyright 2011-2017 ForgeRock AS. All Rights Reserved
+ * 
+-->
+<!DOCTYPE ServicesConfiguration
+    PUBLIC "=//iPlanet//Service Management Services (SMS) 1.0 DTD//EN"
+    "jar://com/sun/identity/sm/sms.dtd">
+
+<ServicesConfiguration>
+    <Service
+            name="iPlanetAMAuthVeriCloudsService"
+            version="1.0">
+        <Schema
+            serviceHierarchy="/DSAMEConfig/authentication/iPlanetAMAuthVeriCloudsService"
+            i18nFileName="amAuthVeriClouds"
+            revisionNumber="10"
+            i18nKey="vericlouds-service-description"
+            resourceName="vericlouds">
+            <Organization>
+                <!-- Specify resourceName for a JSON-friendly property in the REST SMS -->
+                <AttributeSchema name="iplanet-am-auth-vericlouds-auth-level"
+                    resourceName="authLevel"
+                    type="single"
+                    syntax="number_range"
+                    rangeStart="0"
+                    rangeEnd="2147483647"
+                    order="100"
+                    i18nKey="a500">
+                    <DefaultValues>
+                        <Value>1</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <!-- No need for resourceName when the name is JSON-compatible -->
+                <AttributeSchema
+                    name="vericloudsApiUrl"
+                    type="single"
+                    syntax="string"
+                    validator="no"
+                    i18nKey="a503"
+                    order="200">
+                    <DefaultValues>
+                        <Value>https://api.vericlouds.com/index.php</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema
+                    name="vericloudsAppKey"
+                    type="single"
+                    syntax="string"
+                    validator="no"
+                    i18nKey="a501"
+                    order="300">
+                </AttributeSchema>
+                <AttributeSchema
+                    name="vericloudsAppSecret"
+                    type="single"
+                    syntax="string"
+                    validator="no"
+                    i18nKey="a502"
+                    order="400">
+                </AttributeSchema>
+                <AttributeSchema
+                    name="vericloudsCheckPolicy"
+                    type="single_choice"
+                    syntax="string"
+                    i18nKey="a504"
+                    order="500">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="enterprise">enterprise</ChoiceValue>
+                        <ChoiceValue i18nKey="consumer">consumer</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>enterprise</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <AttributeSchema
+                    name="vericloudsUserIdType"
+                    type="single_choice"
+                    syntax="string"
+                    i18nKey="a505"
+                    order="600">
+                    <ChoiceValues>
+                        <ChoiceValue i18nKey="not_used">not_used</ChoiceValue>
+                        <ChoiceValue i18nKey="auto_detect">auto_detect</ChoiceValue>
+                        <ChoiceValue i18nKey="username">username</ChoiceValue>
+                        <ChoiceValue i18nKey="email">email</ChoiceValue>
+                        <ChoiceValue i18nKey="hashed_email">hashed_email</ChoiceValue>
+                        <ChoiceValue i18nKey="phone_number">phone_number</ChoiceValue>
+                    </ChoiceValues>
+                    <DefaultValues>
+                        <Value>not_used</Value>
+                    </DefaultValues>
+                </AttributeSchema>
+                <!--
+                For Auth Modules, the parent Schema element specifies the REST SMS resourceName,
+                and the nested SubSchema must have resourceName="USE-PARENT"
+                -->
+                <SubSchema name="serverconfig"
+                    inheritance="multiple"
+                    resourceName="USE-PARENT">
+                    <AttributeSchema name="iplanet-am-auth-vericlouds-auth-level"
+                        resourceName="authLevel"
+                        type="single"
+                        syntax="number_range"
+                        rangeStart="0"
+                        rangeEnd="2147483647"
+                        order="100"
+                        i18nKey="a500">
+                        <DefaultValues>
+                            <Value>1</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <!-- No need for a DefaultValues element when the default is blank -->
+                    <AttributeSchema
+                        name="vericloudsApiUrl"
+                        type="single"
+                        syntax="string"
+                        validator="no"
+                        i18nKey="a503"
+                        order="200">
+                        <DefaultValues>
+                            <Value>https://api.vericlouds.com/index.php</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema 
+                        name="vericloudsAppKey"
+                        type="single"
+                        syntax="string"
+                        validator="no"
+                        i18nKey="a501"
+                        order="300">
+                    </AttributeSchema>
+                    <AttributeSchema 
+                        name="vericloudsAppSecret"
+                        type="single"
+                        syntax="string"
+                        validator="no"
+                        i18nKey="a502"
+                        order="400">
+                    </AttributeSchema>
+                    <AttributeSchema
+                        name="vericloudsCheckPolicy"
+                        type="single_choice"
+                        syntax="string"
+                        i18nKey="a504"
+                        order="500">
+                        <ChoiceValues>
+                            <ChoiceValue i18nKey="enterprise">enterprise</ChoiceValue>
+                            <ChoiceValue i18nKey="consumer">consumer</ChoiceValue>
+                        </ChoiceValues>
+                        <DefaultValues>
+                            <Value>enterprise</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                    <AttributeSchema
+                        name="vericloudsUserIdType"
+                        type="single_choice"
+                        syntax="string"
+                        i18nKey="a505"
+                        order="600">
+                        <ChoiceValues>
+                            <ChoiceValue i18nKey="not_used">not_used</ChoiceValue>
+                            <ChoiceValue i18nKey="auto_detect">auto_detect</ChoiceValue>
+                            <ChoiceValue i18nKey="username">username</ChoiceValue>
+                            <ChoiceValue i18nKey="email">email</ChoiceValue>
+                            <ChoiceValue i18nKey="hashed_email">hashed_email</ChoiceValue>
+                            <ChoiceValue i18nKey="phone_number">phone_number</ChoiceValue>
+                        </ChoiceValues>
+                        <DefaultValues>
+                            <Value>not_used</Value>
+                        </DefaultValues>
+                    </AttributeSchema>
+                </SubSchema>
+            </Organization>
+        </Schema>
+    </Service>
+</ServicesConfiguration>

@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.forgerock.openam.vericlouds.VeriCloudsIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.844 s <<< FAILURE! - in org.forgerock.openam.vericlouds.VeriCloudsIT
+testGetToken(org.forgerock.openam.vericlouds.VeriCloudsIT)  Time elapsed: 1.109 s  <<< FAILURE!
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://openam.example.com:8080/openam/json/authenticate": Unexpected end of file from server; nested exception is java.net.SocketException: Unexpected end of file from server
+	at org.forgerock.openam.vericlouds.VeriCloudsIT.testGetToken(VeriCloudsIT.java:33)
+Caused by: java.net.SocketException: Unexpected end of file from server
+	at org.forgerock.openam.vericlouds.VeriCloudsIT.testGetToken(VeriCloudsIT.java:33)
+

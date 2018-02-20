@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]">
+  <test name="Surefire test">
+    <classes>
+      <class name="org.forgerock.openam.vericlouds.VeriCloudsIT"/>
+    </classes>
+  </test> <!-- Surefire test -->
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="org.forgerock.openam.vericlouds.VeriCloudsIT">
+        <methods>
+          <include name="testGetToken"/>
+        </methods>
+      </class> <!-- org.forgerock.openam.vericlouds.VeriCloudsIT -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->
