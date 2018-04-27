@@ -98,7 +98,6 @@
                         <ChoiceValue i18nKey="email">email</ChoiceValue>
                         <ChoiceValue i18nKey="hashed_email">hashed_email</ChoiceValue>
                         <ChoiceValue i18nKey="phone_number">phone_number</ChoiceValue>
-                        <ChoiceValue i18nKey="profile">profile</ChoiceValue>
                     </ChoiceValues>
                     <DefaultValues>
                         <Value>not_used</Value>
@@ -178,7 +177,6 @@
                             <ChoiceValue i18nKey="email">email</ChoiceValue>
                             <ChoiceValue i18nKey="hashed_email">hashed_email</ChoiceValue>
                             <ChoiceValue i18nKey="phone_number">phone_number</ChoiceValue>
-                            <ChoiceValue i18nKey="profile">profile</ChoiceValue>
                         </ChoiceValues>
                         <DefaultValues>
                             <Value>not_used</Value>

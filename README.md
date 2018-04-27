@@ -2,7 +2,7 @@
 
 A leaked credential detection authentication module by VeriClouds for ForgeRock Access Management 5.5. VeriClouds CredVerify authentication module checks leaked credential through VeriClouds CredVerify Cloud API. If a user login ID and credential combination is found to match to a login ID and credential discovered in previous data breaches, the module will fail the authentication otherwise it will pass the authentication.
 
-It is important to note that the Cloud API call will only pass user login name such as user name or email address to CredVerify Cloud API but not the user's password. CredVerify Cloud API will returned a list of masked user passwords as a result of querying by use login name and the matching to the leaked passwords will be happen in the authentication module which is deployed to a adopter's local environment.
+It is important to note that the Cloud API call will only pass user login name such as user name or email address to CredVerify Cloud API but not the user's password. CredVerify Cloud API will returned a list of masked user passwords as a result of querying by using login name and the matching to the leaked passwords will be happen in the authentication module which is deployed to a adopter's local environment.
 
 ## Installation
 Copy the .jar file from the ../target directory into the ../web-container/webapps/openam/WEB-INF/lib directory where AM is deployed. Restart the web container to pick up the new auth module. The auth module will then be available when navigate to Authentication -> Modules -> + Add Module. Select "VeriClouds CredVerify" in the New Module page.
